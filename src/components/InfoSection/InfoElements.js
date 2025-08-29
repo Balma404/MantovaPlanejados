@@ -29,10 +29,14 @@ export const VideoWrapper = styled.div`
 `;
 
 export const Video = styled.video`
-   idth: 91%;
-   height: 47rem;
+   width: 92%;
+   height: 90%;
    border-radius: 1rem;
    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+   @media screen and (max-width: 768px) {
+      height: 40rem;
+      width: 23rem;
+}
 `;
 
 export const InfoRow = styled.div`
