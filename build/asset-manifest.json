@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a0268c97.css",
+    "main.js": "/static/js/main.2169a63b.js",
+    "static/media/BANNER MANTOVA.png": "/static/media/BANNER MANTOVA.69fa53a598830fac8c5d.png",
+    "static/media/pricipal.png": "/static/media/pricipal.4096af240f6ce861c66e.png",
+    "index.html": "/index.html",
+    "main.a0268c97.css.map": "/static/css/main.a0268c97.css.map",
+    "main.2169a63b.js.map": "/static/js/main.2169a63b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a0268c97.css",
+    "static/js/main.2169a63b.js"
+  ]
+}
