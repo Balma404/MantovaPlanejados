@@ -25,6 +25,8 @@ export const homeObjTwo = {
    description: 'Imagine abrir a porta da sua sala e sentir que cada detalhe foi pensado para você. A cozinha se torna o coração da casa, o quarto reflete aconchego e sofisticação, e até os menores espaços transmitem identidade. É isso que entregamos: não apenas móveis, mas ambientes que contam sua história.',
    alt: 'planos',
    dark: false,
+   forms: false,
    primary: false,
-   darkText: true
+   darkText: true,
+   video: true
 };

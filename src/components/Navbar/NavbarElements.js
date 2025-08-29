@@ -2,9 +2,11 @@ import styled from 'styled-components';
 import { Link as LinkR } from 'react-router-dom';
 import { Link as LinkS } from 'react-scroll';
 
+
 export const Nav = styled.nav`
    background: ${({scrollNav}) => (scrollNav ? '#000' : 'transparent')};
    height: 100px;
+   
    margin-top: -100px;
    display: flex;
    justify-content: center;
@@ -18,6 +20,16 @@ export const Nav = styled.nav`
       transition: 0.8s all ease;
    }
    
+`;
+
+export const LogoImage = styled.img`
+   height: 20rem; 
+   cursor: pointer;
+
+   @media screen and (max-width: 960px) {
+      height: 16rem;
+      margin-left: -3rem;
+   }
 `;
 
 export const NavbarContainer = styled.div`
@@ -40,7 +52,7 @@ export const NavLogo = styled(LinkR)`
    margin-left: 24px;
    font-weight: bold;
    text-decoration: none;
-   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+   font-family: "Cinzel", serif;
 `;
 
 export const MobileIcon = styled.div` 
@@ -76,6 +88,7 @@ export const NavItem = styled.li`
 
 export const NavLinks = styled(LinkS)`
    color: #fff;
+   
    display: flex;
    align-items: center;
    text-decoration: none;
@@ -87,8 +100,7 @@ export const NavLinks = styled(LinkS)`
    overflow: hidden;
    transition: .3s;
    font-size: 20px;
-   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-
+   font-family: "Cinzel", serif;
    &.active{
       border-bottom: 3px solid #8b7a65;
    }

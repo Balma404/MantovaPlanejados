@@ -1,9 +1,23 @@
 import React, {useState} from 'react';
 import {Button} from '../ButtonElements';
-import mantovaFundo from '../../images/BANNER MANTOVA.png'; 
+import mantovaDesktop from '../../images/desktop.png'; 
+import mantovaMobile from '../../images/mobile.jpg'; 
+import styled from "styled-components";
+
+export const Banner = styled.div`
+   width: 100%;
+   height: 100vh;
+   background-image: url(${mantovaDesktop});
+   background-size: cover;
+   background-position: center;
+
+   @media (max-width: 768px) {
+      background-image: url(${mantovaMobile});
+   }
+`;
+
 import { 
    HeroContainer,
-   Mantova,
    HeroBg,
    HeroContent,
    HeroH1,
@@ -22,19 +36,19 @@ const HeroSection = () => {
    return (
       <HeroContainer id='home'>
          <HeroBg>
-            <Mantova src={mantovaFundo} />
-         </HeroBg>
-         <HeroContent>
-            <HeroH1></HeroH1>
-            <HeroH1></HeroH1>
-            <HeroP>
-            </HeroP>
-            <HeroBtnWrapper>
-            <Button to='about' onMouseEnter={onHover} onMouseLeave={onHover} primary='true' dark='true' smooth={true} duration={500} spy={true} exact='true' offset={-80}>
-            Veja Ele{hover ? <ArrowForward /> : <ArrowRight/>} 
-            </Button>
-            </HeroBtnWrapper>
-         </HeroContent>
+            <Banner />
+         </HeroBg> 
+            <HeroContent>
+               <HeroH1></HeroH1>
+               <HeroH1></HeroH1>
+               <HeroP>
+               </HeroP>
+               <HeroBtnWrapper>
+               <Button to='about' onMouseEnter={onHover} onMouseLeave={onHover} primary='true' dark='true' smooth={true} duration={500} spy={true} exact='true' offset={-80}>
+               Veja Ele{hover ? <ArrowForward /> : <ArrowRight/>} 
+               </Button>
+               </HeroBtnWrapper>
+            </HeroContent>
       </HeroContainer>
    )
 }

@@ -7,7 +7,7 @@ export const HeroContainer = styled.div`
    justify-content: center;
    align-items: center;
    padding: 0 30px;
-   height: 890px;
+   height: 992px;
    position: relative;
    z-index: 1;
    :before {
@@ -20,11 +20,6 @@ export const HeroContainer = styled.div`
       bottom: 0;
       left: 0;
 }
-`
-export const Mantova = styled.img`
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
 `
 
 export const HeroBg = styled.div`

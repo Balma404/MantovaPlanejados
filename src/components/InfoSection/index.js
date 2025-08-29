@@ -6,6 +6,8 @@ import {
       TextWrapper,
       TopLine,
       Heading,
+      VideoWrapper,
+      Video,
       Column1,
       Column2,
       Subtitle,
@@ -13,7 +15,7 @@ import {
 
 import FormComponent from '../InfoSection/Form';
 
-const InfoSection = ({lightBg, id, topLine, lightText, headline, darkText, description, description2, forms}) => {
+const InfoSection = ({lightBg, id, topLine, lightText, headline, darkText, description, description2, forms, video}) => {
    
    return (
       <div>
@@ -30,6 +32,14 @@ const InfoSection = ({lightBg, id, topLine, lightText, headline, darkText, descr
                   </Column1>
                   <Column2>
                      {forms && <FormComponent />}
+                   {video && ( // <-- só renderiza se existir video: true no objeto
+                        <VideoWrapper>
+                           <Video autoPlay muted loop playsInline>
+                              <source src="/videos/video1.mov" type="video/mp4" />
+                              <source src="/videos/video2.mov" type="video/mp4" />
+                           </Video>
+                        </VideoWrapper>
+                     )}
                   </Column2>
                </InfoRow>
             </InfoWrapper>

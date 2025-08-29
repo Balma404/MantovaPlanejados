@@ -1,5 +1,5 @@
 import React from 'react'
-import Img1 from '../../images/pricipal.png'
+// import Img1 from '../../images/pricipal.png'
 import {ServicesContainer, ServicesH1, ServicesWrapper, ServicesCard, ServicesH2, ServicesImg} from './ServiceElements'
 const Services = () => {
    return (
@@ -8,7 +8,7 @@ const Services = () => {
          <ServicesWrapper>
             <ServicesCard>
                <ServicesH2>•Exclusividade: cada projeto é único, feito sob medida.</ServicesH2>
-               <ServicesImg src={Img1} />
+               <ServicesImg src={''} />
             </ServicesCard>
             <ServicesCard>
                <ServicesH2>•Excelência: acabamentos premium e precisão milimétrica.</ServicesH2>

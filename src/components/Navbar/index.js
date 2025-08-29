@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {FaBars} from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { animateScroll as scroll } from 'react-scroll';
+import LogoImg from '../../images/nome.png';
+
+
 import { 
    Nav, 
    NavbarContainer,
@@ -9,7 +12,8 @@ import {
    MobileIcon,
    NavMenu,
    NavItem, 
-   NavLinks
+   NavLinks,
+   LogoImage
 } from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
@@ -36,7 +40,9 @@ const Navbar = ({ toggle }) => {
          <IconContext.Provider value={{ color: '#fff'}}>
          <Nav scrollNav={scrollNav}>
             <NavbarContainer>
-               <NavLogo to='/' onClick={toggleHome}>Mantova</NavLogo>
+               <NavLogo to='/' onClick={toggleHome}>
+                  <LogoImage src={LogoImg} alt='mantova'></LogoImage>
+               </NavLogo>
                <MobileIcon onClick={toggle}> 
                   <FaBars />
                </MobileIcon>

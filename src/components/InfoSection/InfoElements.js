@@ -20,6 +20,21 @@ export const InfoWrapper = styled.div`
    min-height: 100vh;
 `
 
+export const VideoWrapper = styled.div`
+   max-width: 555px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+`;
+
+export const Video = styled.video`
+   idth: 91%;
+   height: 47rem;
+   border-radius: 1rem;
+   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+`;
+
 export const InfoRow = styled.div`
    display: flex;
    align-items: center;

@@ -23,6 +23,21 @@ const FormComponent = () => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
    };
 
+   // Função para mascarar o telefone
+   const handleTelefoneChange = (e) => {
+      let value = e.target.value.replace(/\D/g, ''); // remove tudo que não é número
+
+      if (value.length > 11) value = value.slice(0, 11); // limita 11 dígitos
+
+      if (value.length > 6) {
+         value = `(${value.slice(0,2)}) ${value.slice(2,7)}-${value.slice(7)}`;
+      } else if (value.length > 2) {
+         value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+      }
+
+      setFormData({ ...formData, numero: value });
+   };
+
    const handleSubmit = async (e) => {
       e.preventDefault();
       setLoading(true);
@@ -34,17 +49,12 @@ const FormComponent = () => {
             body: JSON.stringify(formData),
          });
 
-
-         // Verifica se a resposta é JSON
-         if (!res.ok) {
-            throw new Error("Erro de servidor");
-         }
+         if (!res.ok) throw new Error("Erro de servidor");
 
          const data = await res.json();
 
          if (data.success) {
             alert("Cadastro realizado com sucesso!");
-            // limpa os campos
             setFormData({ nome: "", numero: "", email: "", mensagem: "" });
          } else {
             alert("Erro: " + data.message);
@@ -68,26 +78,28 @@ const FormComponent = () => {
                      placeholder="Seu nome" 
                      value={formData.nome} 
                      onChange={handleChange} 
-                     required
+                     required 
                   />
+                  
+                  {/* Campo telefone com máscara */}
                   <Inputt 
                      type="tel" 
                      name="numero" 
-                     placeholder="Seu número" 
+                     placeholder="(xx) xxxxx-xxxx" 
                      value={formData.numero} 
-                     onChange={handleChange} 
-                     required
+                     onChange={handleTelefoneChange} 
+                     required 
                   />
+
                   <Inputt 
                      type="email" 
                      name="email" 
-                     placeholder="Seu email" 
+                     placeholder="exemplo@gmail.com" 
                      value={formData.email} 
                      onChange={handleChange} 
-                     required
+                     required 
                   />
                </Column>
-
                <Column>
                   <TextArea 
                      name="mensagem" 
